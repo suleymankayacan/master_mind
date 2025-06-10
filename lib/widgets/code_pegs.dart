@@ -28,15 +28,17 @@ class _CodePegsState extends State<CodePegs> {
             appState.reveal ? Circle(color: secret[1]) : peg,
             appState.reveal ? Circle(color: secret[2]) : peg,
             appState.reveal ? Circle(color: secret[3]) : peg,
-            ClipOval(
-              child: Container(
-                child: IconButton(
-                  color: Colors.white54,
-                  onPressed: appState.revealCode,
-                  icon: Icon(FontAwesomeIcons.eyeSlash),
+              ClipOval(
+                child: Container(
+                  child: IconButton(
+                    color: Colors.white54,
+                    onPressed: appState.revealCode,
+                    icon: Icon(appState.reveal
+                        ? FontAwesomeIcons.eyeSlash
+                        : FontAwesomeIcons.eye),
+                  ),
                 ),
-              ),
-            )
+              )
           ],
         );
       },
